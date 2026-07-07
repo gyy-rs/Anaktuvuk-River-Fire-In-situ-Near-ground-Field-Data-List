@@ -115,6 +115,7 @@
   .lane-row:last-child{margin-bottom:0}
   .lane-head{display:flex;align-items:center;gap:8px;margin:0 0 9px}
   .lane-cap{font-size:12.5px;font-weight:800;color:#5c6b71;text-transform:uppercase;letter-spacing:.03em}
+  .lane-sub{font-size:11px;font-weight:600;color:#98a1a6;margin:-4px 0 9px;line-height:1.35}
   .lane-tail{margin-left:auto;font-size:10.5px;font-weight:800;color:#2a3c44;background:#fff;
     border:1px solid #d6e0da;border-radius:999px;padding:3px 10px;box-shadow:0 3px 8px rgba(31,54,68,.08);white-space:nowrap}
   .type-tag{font-size:10px;font-weight:900;border-radius:5px;padding:2px 7px}
@@ -391,6 +392,7 @@
             {
               "type": "flux",
               "cap": "Growing-season eddy covariance — NEE / GEE / ER + energy balance, at the severe · moderate · unburned towers",
+              "sub": "3 eddy-covariance towers — 1 severe · 1 moderate · 1 unburned (US-An1 / An2 / An3)",
               "tail": "½-hourly · public 2008–2019",
               "bars": [
                 {
@@ -468,6 +470,7 @@
             {
               "type": "soil",
               "cap": "Airborne-LiDAR elevation differenced between two epochs to map post-fire thaw subsidence across the ARF burn area",
+              "sub": "1 airborne-LiDAR platform · 2 survey epochs (Jul 2009 + Jul 2014)",
               "tail": "Elevation · Terrain",
               "dots": [
                 {
@@ -516,6 +519,7 @@
             {
               "type": "soil",
               "cap": "Daily ground temperature at 0.15 m & 1.00 m depth, burned + unburned sites (Arctic Data Center)",
+              "sub": "2 sites (1 burned + 1 unburned control) × 2 depths (0.15 m & 1.00 m dataloggers)",
               "bars": [
                 {
                   "start": 25,
@@ -533,6 +537,7 @@
             {
               "type": "soil",
               "cap": "Permafrost cores — ground ice, cryostratigraphy & thaw-unconformity, three coring campaigns",
+              "sub": "49 permafrost cores — 41 from ice-wedge troughs + 8 from polygon centres (2021–2023)",
               "tail": "Cores · Ice content",
               "dots": [
                 {
@@ -581,6 +586,7 @@
             {
               "type": "flux",
               "cap": "Umiat automated weather station 65 km W — snow depth & soil moisture, pre-fire context",
+              "sub": "1 automated weather station (1 of USGS's 16-station North-Slope network), 65 km W of the scar",
               "bars": [
                 {
                   "start": 0,
@@ -650,6 +656,7 @@
             {
               "type": "veg",
               "cap": "Plot-level field spectra (FieldSpec, 122 spectra) + CBI check + micro-shadow photos, 18 sites",
+              "sub": "18 field-spectra sites across the severity gradient — 4 unburned · 2 low · 5 moderate · 7 high",
               "tail": "Spectra · Photos",
               "bars": [
                 {
@@ -833,6 +840,7 @@
             {
               "type": "veg",
               "cap": "Annual N/P fertilization + LAI (LI-COR 2200C), measured late July each year",
+              "sub": "2 sites (1 burned + 1 unburned, <7 km apart) × 5 blocks × 4 treatments (control / N / P / N+P)",
               "tail": "LAI · N/P plots",
               "bars": [
                 {
@@ -943,6 +951,7 @@
             {
               "type": "bgc",
               "cap": "2008 soil for growth-chamber work; July 2009 roots from 45 Betula nana across 15 sites (ITS)",
+              "sub": "15 sites — 3 intensive (1 unburned · 1 moderate · 1 severe, 10 shrubs each) + 12 extensive (1–3 shrubs); 45 Betula nana total",
               "dots": [
                 {
                   "pos": 20
@@ -1002,7 +1011,8 @@
     function lane(l){
       var col = typeColor[l.type] || 'var(--muted)';
       var head = '<div class="lane-head"><span class="type-tag '+l.type+'">'+esc(l.cap)+'</span>'
-        + (l.tail ? '<span class="lane-tail">'+esc(l.tail)+'</span>' : '') + '</div>';
+        + (l.tail ? '<span class="lane-tail">'+esc(l.tail)+'</span>' : '') + '</div>'
+        + (l.sub ? '<div class="lane-sub">'+esc(l.sub)+'</div>' : '');
       var track = '<div class="lane-track">';
       (l.bars||[]).forEach(function(b){
         track += '<div class="seg '+(b.bg?'bg':'core')+'" style="left:'+b.start+'%;width:'+b.width+'%;background:'+col+'"></div>';
