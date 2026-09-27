@@ -1151,6 +1151,21 @@
 #instrument-archive .instrument-intro-actions button:first-child:hover{background:#126c4f}
 @media(max-width:720px){#instrument-archive .layout{display:block;padding-top:12px}#instrument-archive .instrument-intro-actions{gap:6px}}
 
+
+/* Jones (2024) figure previews stay local to the logger location row. */
+#instrument-archive .jones-map-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
+#instrument-archive .jones-map-trigger{display:inline-flex;align-items:center;min-height:28px;padding:5px 8px;border:1px solid #cfe0d3;border-radius:6px;background:#eaf3ed;color:#24634a;font-size:10px;font-weight:700;line-height:1.35;text-decoration:none;cursor:zoom-in}
+#instrument-archive .jones-map-trigger:hover,#instrument-archive .jones-map-trigger:focus-visible{background:#dcecdf;border-color:#9bc5a5;color:#154f36}
+.jones-map-pop{position:fixed;z-index:12000;width:min(660px,calc(100vw - 24px));max-height:calc(100vh - 24px);overflow:auto;border:1px solid #cbd8d0;border-radius:11px;background:#fff;box-shadow:0 22px 56px rgba(21,34,39,.30);color:#152227;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+.jones-map-pop[hidden]{display:none!important}
+.jones-map-pop__head{padding:11px 14px 8px;font-size:13px;font-weight:800;border-bottom:1px solid #e1e9e4;color:#1e654a}
+.jones-map-pop__image{display:block;width:100%;height:auto;max-height:56vh;object-fit:contain;background:#f4f7f4}
+.jones-map-pop__body{padding:10px 14px 12px;font-size:11.5px;line-height:1.55;color:#33414a}
+.jones-map-pop__note{margin:0 0 6px}
+.jones-map-pop__credit{font-size:10px;color:#71817a}
+.jones-map-pop__source{display:inline-block;margin-top:6px;color:#1f5f8f;font-size:11px;font-weight:700;text-decoration:none}
+.jones-map-pop__source:hover{text-decoration:underline}
+@media(max-width:720px){.jones-map-pop{width:calc(100vw - 20px);max-height:calc(100vh - 20px)}.jones-map-pop__image{max-height:48vh}}
 </style>
 </head>
 <body>
@@ -3023,7 +3038,7 @@
  <div class="record-grid">
   <div class="col"><div><span class="label">Deployment</span><div class="date-main">July 2009</div><div class="date-type">Reported installation</div></div><div class="coverage"><span class="label">Reported data coverage</span><strong>July 2009–2022 · reported series</strong><div class="small-note">Last reported date, not a removal date.</div></div></div>
   <div class="col"><span class="label">Instruments</span><p class="instrument-list">ONSET HOBO U23-002 datalogger with two external thermistors</p><div class="parameter-box"><span class="label">Measured & derived parameters</span>Ground temperature; mean annual ground temperature (MAGT, derived); thawing degree days (derived)</div><div class="detail-line"><b>Depth / height</b> · 0.15 m and 1.00 m below the surface; 5 cm-diameter borehole</div><div class="detail-line"><b>Recording</b> · Hourly observations, aggregated to daily means</div></div>
-  <div class="col"><div><span class="label">Team</span><div class="team">Benjamin M. Jones &amp; collaborators</div><div class="team-role">Research team · USGS / UAF</div><p class="small-note">Benjamin V. Gaglioti led the later ground-temperature analysis.</p></div><div class="coordinates"><span class="label">Location · latitude, longitude</span><strong>Logger coordinates not yet available</strong><div class="location-note">The control is shown west of the fire in Jones et al. (2024), Figure 1. Numerical logger coordinates have not been located.</div></div></div>
+  <div class="col"><div><span class="label">Team</span><div class="team">Benjamin M. Jones &amp; collaborators</div><div class="team-role">Research team · USGS / UAF</div><p class="small-note">Benjamin V. Gaglioti led the later ground-temperature analysis.</p></div><div class="coordinates"><span class="label">Location · latitude, longitude</span><strong>Logger coordinates not yet available</strong><div class="location-note">The control is shown west of the fire in Jones et al. (2024), Figure 1. Numerical logger coordinates have not been located.</div><div class="jones-map-actions" aria-label="Jones 2024 location figures"><a class="jones-map-trigger" data-jones-figure="fig1" href="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41598-024-58998-5/MediaObjects/41598_2024_58998_Fig1_HTML.png" target="_blank" rel="noopener noreferrer">Fig. 1 · logger sites ↗</a><a class="jones-map-trigger" data-jones-figure="s1" href="https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41598-024-58998-5/MediaObjects/41598_2024_58998_MOESM1_ESM.pdf#page=3" target="_blank" rel="noopener noreferrer">Fig. S1 · boreholes ↗</a></div></div></div>
  </div>
  <div class="link-row"><span class="label">Papers & data</span><a href="https://doi.org/10.18739/A2251FM9P" target="_blank" rel="noopener noreferrer" class="source-chip dataset">Arctic Data Center archive ↗</a><a href="https://www.nature.com/articles/srep15865" target="_blank" rel="noopener noreferrer" class="source-chip" title="Recent Arctic tundra fire initiates widespread thermokarst development">Jones 2015 ↗</a><a href="https://www.nature.com/articles/s41598-024-58998-5" target="_blank" rel="noopener noreferrer" class="source-chip" title="Post-fire stabilization of thaw-affected permafrost terrain in northern Alaska">Jones 2024 ↗</a><a href="https://doi.org/10.18739/A2251FM9P" target="_blank" rel="noopener noreferrer" class="source-chip" title="Multi-period LiDAR, ground temperature and permafrost cores for the Anaktuvuk River Fire">ADC archive ↗</a></div>
  <div class="keyword-row"><button type="button" class="keyword" data-keyword="ground temperature" aria-label="Filter by ground temperature">ground temperature</button><button type="button" class="keyword" data-keyword="thermistor" aria-label="Filter by thermistor">thermistor</button><button type="button" class="keyword" data-keyword="permafrost" aria-label="Filter by permafrost">permafrost</button><button type="button" class="keyword" data-keyword="active layer" aria-label="Filter by active layer">active layer</button><button type="button" class="keyword" data-keyword="Yedoma" aria-label="Filter by Yedoma">Yedoma</button><button type="button" class="keyword" data-keyword="HOBO U23-002" aria-label="Filter by HOBO U23-002">HOBO U23-002</button></div>
@@ -5480,5 +5495,93 @@ const root=document.getElementById('instrument-archive');
 })();
 </script>
 
+
+<script>
+/* Place a single figure preview beside the hovered figure link, inside the viewport. */
+(() => {
+  const root = document.getElementById('instrument-archive');
+  const triggers = [...root.querySelectorAll('[data-jones-figure]')];
+  if (!triggers.length) return;
+  const figures = {
+    fig1: {
+      title: 'Jones et al. (2024) · Fig. 1',
+      image: 'assets/jones_2024/fig1_site_map.png',
+      alt: 'Jones 2024 Figure 1: unburned control logger west of the fire in panel a; burned logger in panel c',
+      note: 'The yellow dot in panel a marks the unburned control logger west of the burn; panel c marks the burned logger. Map symbols do not give exact GPS coordinates.',
+      credit: 'Jones et al., Scientific Reports 14, 8499 (2024), Fig. 1 · CC BY 4.0',
+      source: 'https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41598-024-58998-5/MediaObjects/41598_2024_58998_Fig1_HTML.png',
+      sourceLabel: 'Open publisher figure ↗'
+    },
+    s1: {
+      title: 'Jones et al. (2024) · Supplementary Fig. S1',
+      image: 'assets/jones_2024/fig_s1_boreholes.png',
+      alt: 'Supplementary Figure S1: map of permafrost boreholes near the Anaktuvuk River Fire',
+      note: 'These pins mark boreholes. The ARFU unburned site is not shown, so this map does not locate the control logger.',
+      credit: 'Jones et al. (2024), Supplementary Fig. S1 · Google Earth basemap credit retained in image',
+      source: 'https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41598-024-58998-5/MediaObjects/41598_2024_58998_MOESM1_ESM.pdf#page=3',
+      sourceLabel: 'Open supplementary PDF, p. 3 ↗'
+    }
+  };
+  const pop = document.createElement('div');
+  pop.className = 'jones-map-pop';
+  pop.hidden = true;
+  pop.setAttribute('role', 'dialog');
+  pop.setAttribute('aria-label', 'Jones 2024 figure preview');
+  pop.innerHTML = '<div class="jones-map-pop__head"></div><img class="jones-map-pop__image" alt=""><div class="jones-map-pop__body"><p class="jones-map-pop__note"></p><div class="jones-map-pop__credit"></div><a class="jones-map-pop__source" target="_blank" rel="noopener noreferrer"></a></div>';
+  document.body.appendChild(pop);
+  const head = pop.querySelector('.jones-map-pop__head');
+  const image = pop.querySelector('.jones-map-pop__image');
+  const note = pop.querySelector('.jones-map-pop__note');
+  const credit = pop.querySelector('.jones-map-pop__credit');
+  const source = pop.querySelector('.jones-map-pop__source');
+  let active = null;
+  let hideTimer = null;
+  const cancelHide = () => { if (hideTimer) clearTimeout(hideTimer); hideTimer = null; };
+  const hide = () => { cancelHide(); pop.hidden = true; active = null; };
+  const scheduleHide = () => { cancelHide(); hideTimer = setTimeout(hide, 180); };
+  function position() {
+    if (!active || pop.hidden) return;
+    const rect = active.getBoundingClientRect();
+    const margin = 12;
+    const width = pop.offsetWidth;
+    const height = pop.offsetHeight;
+    let left = rect.right + margin;
+    if (left + width > innerWidth - margin) left = rect.left - width - margin;
+    if (left < margin) left = Math.max(margin, Math.min(rect.left, innerWidth - width - margin));
+    const top = Math.max(margin, Math.min(rect.top - 24, innerHeight - height - margin));
+    pop.style.left = Math.round(left) + 'px';
+    pop.style.top = Math.round(top) + 'px';
+  }
+  function show(trigger) {
+    cancelHide();
+    const fig = figures[trigger.dataset.jonesFigure];
+    if (!fig) return;
+    active = trigger;
+    head.textContent = fig.title;
+    note.textContent = fig.note;
+    credit.textContent = fig.credit;
+    source.href = fig.source;
+    source.textContent = fig.sourceLabel;
+    image.alt = fig.alt;
+    image.src = fig.image;
+    pop.hidden = false;
+    requestAnimationFrame(position);
+  }
+  image.addEventListener('load', position);
+  for (const trigger of triggers) {
+    trigger.addEventListener('mouseenter', () => show(trigger));
+    trigger.addEventListener('mouseleave', scheduleHide);
+    trigger.addEventListener('focus', () => show(trigger));
+    trigger.addEventListener('blur', scheduleHide);
+  }
+  pop.addEventListener('mouseenter', cancelHide);
+  pop.addEventListener('mouseleave', scheduleHide);
+  pop.addEventListener('focusin', cancelHide);
+  pop.addEventListener('focusout', scheduleHide);
+  window.addEventListener('resize', position);
+  window.addEventListener('scroll', position, true);
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') hide(); });
+})();
+</script>
 </body>
 </html>
