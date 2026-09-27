@@ -5543,11 +5543,21 @@ const root=document.getElementById('instrument-archive');
     if (!active || pop.hidden) return;
     const rect = active.getBoundingClientRect();
     const margin = 12;
-    const width = pop.offsetWidth;
+    const maxWidth = Math.min(660, innerWidth - margin * 2);
+    const rightRoom = innerWidth - rect.right - margin * 2;
+    const leftRoom = rect.left - margin * 2;
+    let side = 'center';
+    let width = maxWidth;
+    if (rightRoom >= 480) { side = 'right'; width = Math.min(maxWidth, rightRoom); }
+    else if (leftRoom >= 360) { side = 'left'; width = Math.min(maxWidth, leftRoom); }
+    else if (rightRoom >= 300) { side = 'right'; width = Math.min(maxWidth, rightRoom); }
+    else if (leftRoom >= 300) { side = 'left'; width = Math.min(maxWidth, leftRoom); }
+    pop.style.width = Math.floor(width) + 'px';
     const height = pop.offsetHeight;
-    let left = rect.right + margin;
-    if (left + width > innerWidth - margin) left = rect.left - width - margin;
-    if (left < margin) left = Math.max(margin, Math.min(rect.left, innerWidth - width - margin));
+    let left = side === 'right' ? rect.right + margin
+      : side === 'left' ? rect.left - width - margin
+      : rect.left + (rect.width - width) / 2;
+    left = Math.max(margin, Math.min(left, innerWidth - width - margin));
     const top = Math.max(margin, Math.min(rect.top - 24, innerHeight - height - margin));
     pop.style.left = Math.round(left) + 'px';
     pop.style.top = Math.round(top) + 'px';
